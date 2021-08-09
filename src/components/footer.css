@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer components {
+  .singleFooter {
+    @apply mb-3;
+  }
+  .singleFooter h5 {
+    @apply font-bold text-xs;
+  }
+  .singleFooter p {
+    @apply text-xs leading-8 cursor-pointer;
+  }
+}
