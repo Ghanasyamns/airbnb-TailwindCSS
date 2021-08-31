@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .filters {
+    @apply py-2 flex items-center border border-gray-400 rounded-full px-4 text-justify text-gray-800 hover:border-gray-800 cursor-pointer;
+    font-size: 14px;
+    line-height: 18px;
+  }
+}
+@media only screen and (min-width: 1134px) {
+  .result-grid {
+    display: grid;
+    grid-template-columns: 58% 42%;
+  }
+}
+@media only screen and (min-width: 1134px) {
+  .map-section {
+    display: inline;
+  }
+}
+.fonts {
+  font-family: "Roboto", sans-serif;
+}
+.font-card {
+  font-family: "M PLUS Rounded 1c", sans-serif;
+}

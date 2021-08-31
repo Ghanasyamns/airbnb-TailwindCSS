@@ -12,3 +12,6 @@
     @apply text-xs leading-8 cursor-pointer;
   }
 }
+.test {
+  width:400px
+}

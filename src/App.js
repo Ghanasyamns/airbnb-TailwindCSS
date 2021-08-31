@@ -1,28 +1,19 @@
 import "./App.css";
-import Banner from "./components/Banner";
-import Footer from "./components/Footer";
-import Largecard from "./components/Largecard";
-import MeadiumCards from "./components/MeadiumCards";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import NavBar from "./components/NavBar";
-import SmallCards from "./components/SmallCards";
-
+import Home from "./pages/Home/Home";
+import Footer from "./components/Footer";
+import Result from "./pages/Result/Result";
 function App() {
   return (
     <div className="app">
-      <NavBar />
-      <Banner />
-      <main className=" max-w-7xl mx-auto px-8 sm:px-16">
-        <section className="pt-3">
-          <SmallCards />
-        </section>
-        <section>
-          <h1 className="text-4xl my-3 font-semibold pb-5">Live Anywhere</h1>
+      <Router>
+        <Route path="/" component={NavBar} />
+        <Route exact path="/" component={Home} />
+        <Route exact path="/city/:cityName" component={Result} />
 
-          <MeadiumCards />
-        </section>
-        <Largecard />
-      </main>
-      <Footer />
+        <Route path="/" component={Footer} />
+      </Router>
     </div>
   );
 }

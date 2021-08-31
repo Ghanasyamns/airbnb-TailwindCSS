@@ -10,6 +10,17 @@ function SmallCards(props) {
     };
     fetchData();
   }, []);
+  const cardsLoc = [
+    "Bengaluru",
+    "Puducherry",
+    "Kochi",
+    "Kodaikanal",
+    "Ooty",
+    "Mysuru",
+    "Thiruvananthapuram",
+    "Coimbatore",
+  ];
+
   const singleCard = cards?.map((card, i) => {
     return (
       <div
@@ -23,7 +34,7 @@ function SmallCards(props) {
           alt="..."
         />
         <div className="px-4 ">
-          <h4>{card.location}</h4>
+          <h4>{cardsLoc[i]}</h4>
           <h5 className="text-gray-500">{card.distance}</h5>
         </div>
       </div>

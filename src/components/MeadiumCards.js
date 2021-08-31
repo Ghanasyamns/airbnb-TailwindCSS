@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-
 function MeadiumCards(props) {
   const [cards, setCard] = useState([]);
   useEffect(() => {
@@ -10,14 +9,13 @@ function MeadiumCards(props) {
     };
     liveData();
   }, []);
-  console.log(cards);
   const singleCard = cards?.map((card, i) => {
     return (
       <div
         key={i}
         className="  hover:scale-105 transform transition duration-200 ease-out"
       >
-        <div className="relative w-80 h-80">
+        <div className=" w-[310px] h-[310px]">
           <img className="object-cover rounded-xl" src={card.img} alt="..." />
         </div>
         <div className="my-3">
