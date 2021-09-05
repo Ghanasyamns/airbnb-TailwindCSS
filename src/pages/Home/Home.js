@@ -38,7 +38,6 @@ function Home() {
     };
     reqData();
   }, []);
-  console.log(window.location.pathname);
 
   return (
     <div>

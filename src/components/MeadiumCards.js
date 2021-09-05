@@ -1,15 +1,8 @@
-import { useState, useEffect } from "react";
-import axios from "axios";
+
+import meadiumCardData from './meadiumCardData.json'
 function MeadiumCards(props) {
-  const [cards, setCard] = useState([]);
-  useEffect(() => {
-    const liveData = async () => {
-      const getData = await axios.get("https://links.papareact.com/zp1");
-      setCard(getData.data);
-    };
-    liveData();
-  }, []);
-  const singleCard = cards?.map((card, i) => {
+  
+  const singleCard = meadiumCardData?.map((card, i) => {
     return (
       <div
         key={i}

@@ -1,27 +1,9 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
 
+import smallCardData from './smallCardData.json';
 function SmallCards(props) {
-  const [cards, setCards] = useState([]);
-  useEffect(() => {
-    const fetchData = async () => {
-      const exploreData = await axios.get("https://links.papareact.com/pyp");
-      setCards(exploreData.data);
-    };
-    fetchData();
-  }, []);
-  const cardsLoc = [
-    "Bengaluru",
-    "Puducherry",
-    "Kochi",
-    "Kodaikanal",
-    "Ooty",
-    "Mysuru",
-    "Thiruvananthapuram",
-    "Coimbatore",
-  ];
-
-  const singleCard = cards?.map((card, i) => {
+  
+  
+  const singleCard = smallCardData?.map((card, i) => {
     return (
       <div
         key={i}
@@ -34,7 +16,7 @@ function SmallCards(props) {
           alt="..."
         />
         <div className="px-4 ">
-          <h4>{cardsLoc[i]}</h4>
+          <h4>{card.location}</h4>
           <h5 className="text-gray-500">{card.distance}</h5>
         </div>
       </div>
