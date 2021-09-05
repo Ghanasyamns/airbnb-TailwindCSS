@@ -42,8 +42,8 @@ function NavBar() {
       }}
       className={` nav p-3  grid grid-cols-3  sticky top-0 z-50 ${
         screenHeight && window.location.pathname === "/"
-          ? "bg-transparent "
-          : "bg-white "
+          ? "bg-transparent text-gray-50"
+          : "bg-white text-gray-800"
       }  shadow-md sm:p-5 md:px-10`}
     >
       {/* left section */}
@@ -60,7 +60,7 @@ function NavBar() {
       <div className="flex  items-center md md:border-2 rounded-full md:shadow-sm">
         <input
           value={searchInput}
-          className="flex flex-grow bg-transparent outline-none mx-3 text-sm text-gray-600 placeholder-gray-400"
+          className="flex flex-grow bg-transparent outline-none mx-3 text-sm  placeholder-gray-400"
           type="text"
           placeholder="Start your Search"
           onChange={(e) => setInput(e.target.value)}
@@ -69,11 +69,7 @@ function NavBar() {
       </div>
       {/* right section */}
       <div
-        className={`flex justify-end items-center ${
-          screenHeight && window.location.pathname === "/"
-            ? "text-gray-50"
-            : "text-gray-800"
-        }   space-x-4`}
+        className={`flex justify-end items-center    space-x-4`}
       >
         <p className="font-semibold hidden md:inline cursor-pointer  ">
           Become a host
