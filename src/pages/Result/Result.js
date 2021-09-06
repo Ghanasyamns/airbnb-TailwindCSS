@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import CardSection from "./CardSection";
-import MapSection from "./MapSection";
+import Map from "./MapSection";
 import "./Result.css";
 function Result(props) {
   const [city, setCity] = useState({});
@@ -38,8 +38,8 @@ function Result(props) {
         </h1>
         <CardSection city={city.venues} />
       </div>
-      <div className="hidden bg-red-400 map-section ">
-        <MapSection />
+      <div  className=" h-screen sticky top-[90px]">
+        <Map />
       </div>
     </div>
   );
