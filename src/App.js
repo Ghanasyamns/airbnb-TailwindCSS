@@ -11,6 +11,7 @@ function App() {
         <Route path="/" component={NavBar} />
         <Route exact path="/" component={Home} />
         <Route exact path="/city/:cityName" component={Result} />
+        <Route exact path="/common/:location" component={Result}/>
 
         <Route path="/" component={Footer} />
       </Router>

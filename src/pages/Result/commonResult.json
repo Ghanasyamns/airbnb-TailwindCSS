@@ -1,0 +1,63 @@
+[
+    
+    {
+      "imageUrl": "https://links.papareact.com/hz2",
+      "location": "India",
+      "title": "Independant luxury studio apartment",
+      "description": "2 guest · 3 bedroom · 1 bed · 1.5 shared bthrooms · Wifi · Kitchen",
+      "rating": 4.3,
+      "pricePerNight": "40 ",
+      "long": -0.095091,
+      "lat": 51.48695
+    },
+    {
+      "imageUrl": "https://links.papareact.com/uz7",
+      "location": "India",
+      "title": "India Studio Apartments",
+      "description": "4 guest · 4 bedroom · 4 bed · 2 bathrooms · Free parking · Washing Machine",
+      "rating": 3.8,
+      "pricePerNight": "35 ",
+      "long": -0.135638,
+      "lat": 51.521916
+    },
+    {
+      "imageUrl": "https://links.papareact.com/6as",
+      "location": "India",
+      "title": "30 mins to Oxford Street, Excel India",
+      "description": "1 guest · 1 bedroom · 1 bed · 1.5 shared bthrooms · Wifi · Kitchen · Free parking · Washing Machine",
+      "rating": 4.1,
+      "pricePerNight": "55 ",
+      "long": -0.069961,
+      "lat": 51.472618
+    },
+    {
+      "imageUrl": "https://links.papareact.com/xhc",
+      "location": "India",
+      "title": "Spacious Peaceful Modern Bedroom",
+      "description": "3 guest · 1 bedroom · 1 bed · 1.5 shared bthrooms · Wifi · Free parking · Dry Cleaning",
+      "rating": 5,
+      "pricePerNight": "60 ",
+      "long": -0.08472,
+      "lat": 51.510794
+    },
+    {
+      "imageUrl": "https://links.papareact.com/pro",
+      "location": "India",
+      "title": "The Blue Room In India",
+      "description": "2 guest · 1 bedroom · 1 bed · 1.5 shared bthrooms · Wifi · Washing Machine",
+      "rating": 4.23,
+      "pricePerNight": "65 ",
+      "long": -0.094116,
+      "lat": 51.51401
+    },
+    {
+      "imageUrl": "https://links.papareact.com/8w2",
+      "location": "India",
+      "title": "Five star Luxury Apartment",
+      "description": "3 guest · 1 bedroom · 1 bed · 1.5 shared bthrooms · Wifi · Kitchen · Free parking · Washing Machine",
+      "rating": 3.85,
+      "pricePerNight": "90 ",
+      "long": -0.109889,
+      "lat": 51.521245
+    }
+  ]

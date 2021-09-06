@@ -7,9 +7,9 @@ const [toggleColour, settoggleColour] = useState(false)
 
 
   const singleCard = props.city?.map(
-    ({ imageUrl, pricePerNight, rating, title, location ,id}) => {
+    ({ imageUrl, pricePerNight, rating, title, location },i) => {
       return (
-        <div key={id} id={id} className="relative  flex flex-col md:py-4 md:flex-row md:border-b-[1px] border-gray-200 ">
+        <div key={i} className="relative  flex flex-col md:py-4 md:flex-row md:border-b-[1px] border-gray-200 ">
           <div className="md:w-72 md:h-62 ">
             <img
               className="object-cover w-full h-full max-h-[450px] rounded-xl"
@@ -26,7 +26,9 @@ const [toggleColour, settoggleColour] = useState(false)
              
             </div>
             <div className="text-xl">
-              <h1 className="md:text-lg md:text-gray-500">Entire cottage.{location}</h1>
+              <h1 className="md:text-base md:text-gray-500">
+               Entire cottage.{location.charAt(0).toUpperCase()+location.slice(1).toLowerCase()}
+                </h1>
               <h1>{title.charAt(0).toUpperCase()+title.slice(1).toLowerCase()}</h1>
             </div>
             <div className="hidden md:inline ">
