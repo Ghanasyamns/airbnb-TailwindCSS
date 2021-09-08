@@ -1,15 +1,18 @@
-import { useState } from "react";
+import { useState,useContext} from "react";
 import { HeartIcon } from "@heroicons/react/outline";
 import { StarIcon } from "@heroicons/react/solid";
+import { activeContext } from "./Result";
 import "./Result.css";
 function CardSection(props) {
 const [toggleColour, settoggleColour] = useState(false)
+const context = useContext(activeContext)
+  
 
 
   const singleCard = props.city?.map(
     ({ imageUrl, pricePerNight, rating, title, location },i) => {
       return (
-        <div key={i} className="relative  flex flex-col md:py-4 md:flex-row md:border-b-[1px] border-gray-200 ">
+        <div key={i} onMouseOver={()=>context.update(i)}  className="relative  flex flex-col md:py-4 md:flex-row md:border-b-[1px] border-gray-200 ">
           <div className="md:w-72 md:h-62 ">
             <img
               className="object-cover w-full h-full max-h-[450px] rounded-xl"
@@ -55,7 +58,9 @@ const [toggleColour, settoggleColour] = useState(false)
       );
     }
   );
-  return <div className="font-card">{singleCard}</div>;
+ 
+  
+  return <div onMouseLeave={()=>context.update(null)} className="font-card">{singleCard}</div>;
 }
 export default CardSection;
 

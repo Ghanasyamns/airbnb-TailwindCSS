@@ -1,16 +1,21 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useEffect, useState,createContext } from "react";
 import CardSection from "./CardSection";
 import Map from "./MapSection";
 import "./Result.css";
 import commondata from './commonResult.json'
+
+export const activeContext=createContext();
+
 
 function Result(props) {
   let pathCheck=props.location.pathname.includes('/city')
   let  cityName ;
   let  location;
   pathCheck?{cityName}=props.match.params:{location}=props.match.params
-
+//for colour change in map when mouse over on cards
+  const [active, setActive] = useState(null);
+ const updateActive=(value)=>setActive(value)
   const [city, setCity] = useState({});
   const [common, setCommon] = useState([])
   useEffect(() => {
@@ -26,10 +31,14 @@ function Result(props) {
     else{
       setCommon(commondata)
     }
-  }, [pathCheck]);
+  }, [pathCheck,cityName]);
+  
+
+ 
 
 
   return (
+    <activeContext.Provider value={{active:active,update:updateActive}}>
     <div className="  result-grid">
       <div className="fonts mt-14  mx-5">
         <div className=" flex justify-center md:inline ">
@@ -52,9 +61,10 @@ function Result(props) {
         <CardSection city={pathCheck?city.venues:common} />
       </div>
       <div  className="hidden map-section h-screen sticky top-[90px]">
-        <Map />
+        <Map  data={pathCheck?city.venues:common} />
       </div>
     </div>
+    </activeContext.Provider>
   );
 }
 
