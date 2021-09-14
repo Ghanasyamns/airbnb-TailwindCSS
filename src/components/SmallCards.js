@@ -28,7 +28,7 @@ function SmallCards(props) {
   return (
     
     <div>
-      <h1 className="text-4xl font-semibold pb-5">Explore Nearby</h1>
+      <h1 className="my-3  text-3xl font-medium md:text-4xl  ">Explore Nearby</h1>
       <div className=" relative w-full grid grid-cols-1 sm:grid-cols-2  lg:grid-cols-3 xl:grid-cols-4">
         {singleCard}
       </div>

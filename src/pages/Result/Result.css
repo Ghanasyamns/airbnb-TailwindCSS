@@ -15,12 +15,17 @@
     grid-template-columns: 58% 42%;
   }
 }
-
+@media only screen and (max-width: 1134px) {
+  .map-section {
+    display: none;
+  }
+}
 @media only screen and (min-width: 1134px) {
   .map-section {
     display: inline;
   }
 }
+
 .fonts {
   font-family: "Roboto", sans-serif;
 }

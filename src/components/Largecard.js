@@ -1,6 +1,6 @@
 function Largecard() {
   return (
-    <div className=" relative w-full h-[380px] my-16">
+    <div className=" relative w-full h-[380px] my-3">
       <img
         className="absolute h-full w-full object-cover rounded-xl"
         src="https://links.papareact.com/4cj"

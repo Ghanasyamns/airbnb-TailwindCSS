@@ -3,7 +3,7 @@ import getCenter from 'geolib/es/getCenter'
 import 'mapbox-gl/dist/mapbox-gl.css';
 import './map.css'
 import { StarIcon } from "@heroicons/react/solid";
-
+import { Link } from 'react-router-dom';
 import latLong from './latLong.json';
 import ReactMapGL,{Marker,Popup} from 'react-map-gl';
 import { activeContext } from './Result';
@@ -48,7 +48,7 @@ return (
     onViewportChange={nextViewport => setViewport(nextViewport)}
   >{markers}
   {mapCard.showPopup&&(
-    <Popup 
+    <Popup  
     latitude={latLong[mapCard.id].lat}
     longitude={latLong[mapCard.id].long}
     offsetLeft={27}
@@ -56,6 +56,8 @@ return (
     closeOnClick={true}
     onClose={() =>setMapCard({})}
     anchor="bottom" >
+    <Link to={`/venue/${mapCard.city.id}`} >
+
     <div className="relative w-[270px] h-[300px]  ">
       <div>
       <img src={mapCard.city.imageUrl} alt="card-img" className="  w-full h-[180px] "/>
@@ -79,8 +81,9 @@ return (
               <span>/ night</span>
             </div>
     </div>
-    
+    </Link>
   </Popup>
+  
   )}
   </ReactMapGL>
 );

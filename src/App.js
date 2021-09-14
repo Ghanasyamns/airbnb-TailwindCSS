@@ -4,6 +4,7 @@ import NavBar from "./components/NavBar";
 import Home from "./pages/Home/Home";
 import Footer from "./components/Footer";
 import Result from "./pages/Result/Result";
+import BookingHome from "./pages/BookingPage/BookingHome";
 function App() {
   return (
     <div className="app">
@@ -12,7 +13,7 @@ function App() {
         <Route exact path="/" component={Home} />
         <Route exact path="/city/:cityName" component={Result} />
         <Route exact path="/common/:location" component={Result}/>
-
+          <Route exact path="/venue/:venueId" component={BookingHome}/>
         <Route path="/" component={Footer} />
       </Router>
     </div>

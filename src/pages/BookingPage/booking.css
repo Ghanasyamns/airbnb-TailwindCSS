@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.btn-bg{
+
+background-image: var(--dls19-brand-gradient-radial,
+ radial-gradient(circle at center, #FF385C 0%, #E61E4D 27.5%, #E31C5F 40%, #D70466 57.5%, #BD1E59 75%, #BD1E59 100% )) !important;
+
+}
+@layer components{
+    .icon-outline{
+        @apply border-[1px] border-gray-400 rounded-full hover:border-gray-800 p-2;
+    }
+    .icon-inline{
+     @apply w-4 h-4 text-gray-600 hover:text-gray-800;
+    }
+}

@@ -60,7 +60,7 @@ function Result(props) {
         </h1>
         <CardSection city={pathCheck?city.venues:common} />
       </div>
-      <div  className="hidden map-section h-screen sticky top-[90px]">
+      <div  className=" map-section  h-screen sticky top-[90px]">
         <Map  data={pathCheck?city.venues:common} />
       </div>
     </div>

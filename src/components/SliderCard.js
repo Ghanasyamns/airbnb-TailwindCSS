@@ -51,7 +51,7 @@ function SliderCard(props) {
           />
           <div className="my-3">
             <p className="text-2xl text-gray-900 ">
-              {item.cityName || item.activityType}
+              {(item.cityName || item.activityType).charAt(0).toUpperCase()+(item.cityName || item.activityType).slice(1).toLowerCase()}
             </p>
           </div>
         </div>

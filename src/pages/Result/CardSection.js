@@ -2,6 +2,7 @@ import { useState,useContext} from "react";
 import { HeartIcon } from "@heroicons/react/outline";
 import { StarIcon } from "@heroicons/react/solid";
 import { activeContext } from "./Result";
+import { Link } from "react-router-dom";
 import "./Result.css";
 function CardSection(props) {
 const [toggleColour, settoggleColour] = useState(false)
@@ -10,9 +11,10 @@ const context = useContext(activeContext)
 
 
   const singleCard = props.city?.map(
-    ({ imageUrl, pricePerNight, rating, title, location },i) => {
+    ({ imageUrl, pricePerNight, rating, title, location,id },i) => {
       return (
-        <div key={i} onMouseOver={()=>context.update(i)}  className="relative  flex flex-col md:py-4 md:flex-row md:border-b-[1px] border-gray-200 ">
+        <Link key={i} to={`/venue/${id}`}>
+        <div  onMouseOver={()=>context.update(i)}  className="relative  flex flex-col md:py-4 md:flex-row md:border-b-[1px] border-gray-200 ">
           <div className="md:w-72 md:h-62 ">
             <img
               className="object-cover w-full h-full max-h-[450px] rounded-xl"
@@ -55,6 +57,7 @@ const context = useContext(activeContext)
             active:scale-110 transition transform duration-150 ease-in" />
             </button>
         </div>
+        </Link>
       );
     }
   );
