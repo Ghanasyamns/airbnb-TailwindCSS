@@ -42,12 +42,8 @@ function NavBar() {
       }}
       className={` nav p-3  grid grid-cols-3  sticky top-0 z-50 ${
         screenHeight && window.location.pathname === "/"
-          ? "bg-transparent text-gray-50"
-<<<<<<< HEAD
-          : "bg-white text-gray-800 shadow-md"
-=======
-          : "bg-white text-gray-800 shadow-md "
->>>>>>> mapSection
+          ? "bg-transparent text-gray-50" : "bg-white text-gray-800 shadow-md "
+
       }   sm:p-5 md:px-10`}
     >
       {/* left section */}
