@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState,useLayoutEffect } from "react";
 
 import Banner from "../../components/Banner";
 import SmallCards from "../../components/SmallCards";
@@ -12,7 +12,7 @@ function Home() {
   const [asia, setAsia] = useState({});
   const [europe, setEurope] = useState({});
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     //recommended
     const reqData = async () => {
       const RecData = axios.get(`${window.robHost}/cities/recommended`);
@@ -47,28 +47,29 @@ function Home() {
           <SmallCards />
         </section>
         <section>
-          <h1 className="text-4xl my-3 font-semibold pb-5">Live Anywhere</h1>
+          <h1 className="  my-3  text-3xl font-medium sm:text-[36px]   ">
+            Live Anywhere</h1>
 
           <MeadiumCards />
         </section>
         <section>
-          <h1 className="text-4xl my-3 font-semibold pb-5">
+          <h1 className=" my-3  text-3xl font-medium md:text-[36px]   ">
             Recommended cities
           </h1>
           <SliderCard cards={recCities} />
         </section>
         <section>
-          <h1 className="text-4xl my-3 font-semibold pb-5">
+          <h1 className=" my-3  text-3xl font-medium md:text-[36px]   ">
             Discover things to do
           </h1>
           <SliderCard cards={Activities} />
         </section>
         <section>
-          <h1 className="text-4xl my-3 font-semibold pb-5">{asia.header}</h1>
+          <h1 className=" my-3  text-3xl font-medium md:text-[36px]   ">{asia.header}</h1>
           <SliderCard cards={asia.cities} />
         </section>
         <section>
-          <h1 className="text-4xl my-3 font-semibold pb-5">{europe.header}</h1>
+          <h1 className=" my-3  text-3xl font-medium md:text-[36px]   ">{europe.header}</h1>
           <SliderCard cards={europe.cities} />
         </section>
         <Largecard />

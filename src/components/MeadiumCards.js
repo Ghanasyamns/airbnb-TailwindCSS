@@ -1,12 +1,14 @@
 
+import { Link } from 'react-router-dom';
 import meadiumCardData from './meadiumCardData.json'
 function MeadiumCards(props) {
   
   const singleCard = meadiumCardData?.map((card, i) => {
     return (
+    <Link  key={i} to={`/common/${card.title}`}>
+
       <div
-        key={i}
-        className="  hover:scale-105 transform transition duration-200 ease-out"
+         className="  hover:scale-105 transform transition duration-200 ease-out"
       >
         <div className=" w-[310px] h-[310px]">
           <img className="object-cover rounded-xl" src={card.img} alt="..." />
@@ -15,6 +17,7 @@ function MeadiumCards(props) {
           <p className="text-2xl text-gray-900 ">{card.title}</p>
         </div>
       </div>
+      </Link>
     );
   });
   return (

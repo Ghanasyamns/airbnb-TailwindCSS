@@ -1,27 +1,49 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useEffect, useState,createContext } from "react";
 import CardSection from "./CardSection";
-import MapSection from "./MapSection";
+import Map from "./MapSection";
 import "./Result.css";
+import commondata from './commonResult.json'
+
+export const activeContext=createContext();
+
+
 function Result(props) {
+  let pathCheck=props.location.pathname.includes('/city')
+  let  cityName ;
+  let  location;
+  pathCheck?{cityName}=props.match.params:{location}=props.match.params
+//for colour change in map when mouse over on cards
+  const [active, setActive] = useState(null);
+ const updateActive=(value)=>setActive(value)
   const [city, setCity] = useState({});
-  const { cityName } = props.match.params;
+  const [common, setCommon] = useState([])
   useEffect(() => {
+    if(pathCheck){
+
     const getData = async () => {
       const respData = await axios.get(
         `${window.robHost}/venues/city/${cityName}`
       );
       setCity(respData.data);
     };
-    getData();
-  }, [cityName]);
+    getData()}
+    else{
+      setCommon(commondata)
+    }
+  }, [pathCheck,cityName]);
+  
+
+ 
+
 
   return (
+    <activeContext.Provider value={{active:active,update:updateActive}}>
     <div className="  result-grid">
       <div className="fonts mt-14  mx-5">
         <div className=" flex justify-center md:inline ">
           <h1 className="  text-xl md:text-3xl font-extrabold ">
-            {city.header}
+            {pathCheck?city.header:`Rentals in ${location}`}
           </h1>
         </div>
         <div className="flex justify-start  space-x-3 my-6">
@@ -36,12 +58,13 @@ function Result(props) {
           Review COVID-19 travel restrictions before you book.
           <span className="underline cursor-pointer">Learn more</span>
         </h1>
-        <CardSection city={city.venues} />
+        <CardSection city={pathCheck?city.venues:common} />
       </div>
-      <div className="hidden bg-red-400 map-section ">
-        <MapSection />
+      <div  className=" map-section  h-screen sticky top-[90px]">
+        <Map  data={pathCheck?city.venues:common} />
       </div>
     </div>
+    </activeContext.Provider>
   );
 }
 

@@ -1,7 +1,7 @@
 import "./footer.css";
 function Footer() {
   return (
-    <div>
+    <div className="">
       <div className="bg-gray-100 py-12 pl-[130px] grid grid-cols-1 sm:grid-cols-2  justify-center lg:grid-cols-4 ">
         <div className=" singleFooter">
           <h5 className=" ">ABOUT</h5>
